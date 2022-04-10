@@ -19,8 +19,8 @@
         }
         return $coin;
     }
-    function getCountDown($fileid, $dbOFF){
-        $sql = "select countdown from filedownloads where fileid = '$fileid'";
+    function getCountDown($x, $dbOFF){
+        $sql = "select countdown from countdownloads where fileid = '$x' or plid = '$x'";
         $result = mysqli_query($dbOFF, $sql);
         $downloads = 0;
         if(mysqli_num_rows($result) > 0){

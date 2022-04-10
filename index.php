@@ -38,30 +38,28 @@
                 width: 100%;
             }
             #menu > li{
-                padding: 2px;
+                padding: 5px;
                 font-size: larger;
                 font-weight: 800;
-                background: green;
-                margin: 5px;
+                background: #4fdb74;
                 width: 100%;
                 text-align: center;
-                border-radius: 10px;
+                position: relative;
             }
             #menu a{
                 text-decoration: none;
                 color: white;
             }
-
             #sub-menu{
                 list-style: none;
                 position: absolute;
-                width: 19.1%;
+                width: 100%;
             }
             #sub-menu a{
                 text-decoration: none;
             }
             #sub-menu > li{
-                background: forestgreen;
+                background: #4fdb74;
                 display: none;
                 position: relative;
                 padding: 5px;
@@ -75,7 +73,6 @@
             }
             #menu > li:hover > #sub-menu > li{
                 display: block;
-                border-radius: 10px;
             }
         </style>
     </head>
@@ -89,7 +86,7 @@
                         <ul id="sub-menu" style="color: white;">
                             <li id="scr-info">Giới thiệu</li>
                             <li id="scr-public">Cộng đồng</li>
-                            <li id="scr-comment">Bình luận</li>`
+                            <li id="scr-comment">Bình luận</li>
                         </ul>
                     </li>
                     <li>

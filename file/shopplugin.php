@@ -164,10 +164,9 @@
                 ?></span></li>
             </ul>
         </div>
+        <hr>
         <!-- content -->
         <style>
-            #content {
-            }
             #onebox {
                 background: white;
                 padding: 10px;
@@ -183,19 +182,42 @@
                 font-weight: 900;
                 text-align: center;
             }
-            #onebox input{
-                width: 9px;
-            }
             #onebox ul li{
                 padding: 10px;
                 list-style-type: square;
-                line-height: 0;
+                line-height: 80%;
             }
         </style>
         <div class="row" id="content">
             <div class="col-sm-4" id="onebox">
-                <h3>Holo damage #<input type="text" name="pluginid" id="pluginid" value="0"></h3>
-                <p>Mô tả: block tự động chui vào túi E khi farm. Thường dùng trong prison</p>
+                <h3>Holo Damage #<span id="plid">0</span></h3>
+                <p>Mô tả: đánh mobs/player hiện ra lượng sát thương gây ra trên đối tượng. Vd: -5<i class="fas fa-heart"></i></p>
+                <ul>Tính năng khác:
+                    <li>Hiện hiệu ứng & phạm vi hiệu ứng khi đánh</li>
+                    <li>Thanh máu địch hiện lên thanh BossBar hoặc ActionBar (thanh dưới tim)</li>
+                    <li>Custom màu sắc, biểu tượng máu, thanh máu</li>
+                    <li>...</li>
+                </ul>
+                <video src="https://res.cloudinary.com/dopzctbyo/video/upload/v1649588237/IMG-0440_a8yiao.mp4" controls loop autoplay muted width="100%"></video>
+                <p>Giá bán: <span id="plcost">5</span> token <i class="fas fa-money-bill-alt"></i> (no refund)</p>
+                <button type="button" class="btn btn-primary btn-lg" id="buy">MUA NGAY</button>
+            </div>
+            <div class="col-sm-4" id="onebox">
+                <h3>Message BossBar #<span id="plid">1</span></h3>
+                <p>Mô tả: tạo vòng lặp lời nhắc luôn thay đổi hiện trên thanh bossbar <i class="fas fa-bars"></i></p>
+                <ul>Tính năng khác:
+                    <li>Thông báo tin nhắn tức thì bằng bossbar</li>
+                    <li>Tạo vòng lặp message chatbox như TIPs hoặc chú ý</li>
+                    <li>Custom join/leave/fistjoin tin nhắn khi ai đó vào server</li>
+                    <li>...</li>
+                </ul>
+                <video src="https://res.cloudinary.com/dopzctbyo/video/upload/v1649588237/IMG-0440_a8yiao.mp4" controls loop autoplay muted width="100%"></video>
+                <p>Giá bán: <span id="plcost">5</span> token <i class="fas fa-money-bill-alt"></i> (no refund)</p>
+                <button type="button" class="btn btn-primary btn-lg" id="buy">MUA NGAY</button>
+            </div>
+            <div class="col-sm-4" id="onebox">
+                <h3>Auto nhặt block #<span id="plid">2</span></h3>
+                <p>Mô tả: block tự động chui vào túi E khi farm. Thường dùng trong prison <i class="fas fa-funnel-dollar"></i></p>
                 <ul>Tính năng khác:
                     <li>Gia tài blocks (khối & quặng)</li>
                     <li>Tự nung ore khi đào</li>
@@ -203,20 +225,6 @@
                     <li>...</li>
                 </ul>
                 <video src="https://res.cloudinary.com/dopzctbyo/video/upload/v1649588237/IMG-0440_a8yiao.mp4" controls loop autoplay muted width="100%"></video>
-                <p>Giá bán: 5 token <i class="fas fa-money-bill-alt"></i> (no refund)</p>
-                <button type="button" class="btn btn-primary btn-lg" id="buy">MUA NGAY</button>
-            </div>
-
-            <div class="col-sm-4" id="onebox">
-                <h3>Auto nhặt block #<span id="plid">1</span></h3>
-                <p>Mô tả: block tự động chui vào túi E khi farm. Thường dùng trong prison</p>
-                <ul>Tính năng khác:
-                    <li>Gia tài blocks (khối & quặng)</li>
-                    <li>Tự nung ore khi đào</li>
-                    <li>Tự craft block khi đủ sʟ trong túi E</li>
-                    <li>...</li>
-                </ul>
-                <video src="../vid/IMG-0449.mp4" controls loop autoplay muted width="100%"></video>
                 <p>Giá bán: <span id="plcost">5</span> token <i class="fas fa-money-bill-alt"></i> (no refund)</p>
                 <button type="button" class="btn btn-primary btn-lg" id="buy">MUA NGAY</button>
             </div>

@@ -98,7 +98,7 @@
                     <a href="javascript:void(0)">Cửa hàng</a>
                     <ul id="sub-menu">
                         <li><a href="javascript:void(0)">Shop file</a> <i class="fas fa-street-view" style="color: greenyellow;"></i></li>
-                        <li><a href="javascript:void(0)">Shop plugin</a></li>
+                        <li><a href="./shopplugin.php">Shop plugin</a></li>
                     </ul>
                 </li>
                 <li>
@@ -372,7 +372,7 @@
                 <p>- Chưa cài các plugin phụ trợ</p>
                 <p>- Plugin vẫn còn hoạt động tốt, ko xung đột. Hỗ trợ fix bug, lỗi file, lỗi console...(nêu có)</p>
                 <strong>SELL:</strong>
-                <p>-<span id="filecost">2</span>.0$ <i class="far fa-money-bill-alt" style="color: #1ea645;"></i></p>
+                <p>-<span id="filecost">1</span>.0$ <i class="far fa-money-bill-alt" style="color: #1ea645;"></i></p>
                 <button type="button" id="buy"><i class="fas fa-shopping-cart"></i> MUA NGAY</button>
                 <button type="button" id="review">REVIEW <i class="fas fa-images"></i></button>
             </div>
