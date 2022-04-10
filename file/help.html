@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nhinguyen.rf.gd | Trợ giúp</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-image: url('../img/bg.png');
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <!-- nav -->
+        <style>
+            #menu{
+                display: flex;
+                list-style: none;
+                width: 100%;
+            }
+            #menu > li{
+                padding: 2px;
+                font-size: larger;
+                font-weight: 800;
+                background: green;
+                margin: 5px;
+                width: 100%;
+                text-align: center;
+                border-radius: 10px;
+            }
+            #menu a{
+                text-decoration: none;
+                color: white;
+            }
+
+            #sub-menu{
+                list-style: none;
+                position: absolute;
+                width: 19.1%;
+            }
+            #sub-menu a{
+                text-decoration: none;
+            }
+            #sub-menu > li{
+                background: forestgreen;
+                display: none;
+                position: relative;
+                padding: 5px;
+            }
+            #sub-menu > li:hover{
+                cursor: pointer;
+                color: white;
+                text-decoration: underline;
+                text-shadow: 2px 2px 2px #38CE66;
+                box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            }
+            #menu > li:hover > #sub-menu > li{
+                display: block;
+                border-radius: 10px;
+            }
+        </style>
+        <div class="row" id="nav">
+            <ul id="menu">
+                <li>
+                    <a href="../index.php">Trang chủ</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)">Phúc lợi</a>
+                    <ul id="sub-menu">
+                        <li><a href="javascript:void(0)">Điểm danh</a></li>
+                        <li><a href="javascript:void(0)">Nhập giftcode</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:void(0)">Cửa hàng</a>
+                    <ul id="sub-menu">
+                        <li><a href="javascript:void(0)">Shop file</a></li>
+                        <li><a href="javascript:void(0)">Shop plugin</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:void(0)">Tài khoản</a>
+                    <ul id="sub-menu">
+                        <li><a href="./register.php">Đăng ký</a></li>
+                        <li><a href="./login.php">Đăng nhập</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:void(0)">Danh mục khác</a>
+                    <ul id="sub-menu">
+                        <li><a href="./download.html">Tải xuống</a></li>
+                        <li><a href="javascript:void(0)">Trợ giúp</a> <i class="fas fa-street-view" style="color: greenyellow;"></i></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- trợ giúp -->
+        <style>
+            #help{
+                color: blue;
+            }
+            #help ul li{
+                list-style-type: none;
+            }
+            #help h2{
+                font-weight: 900;
+            }
+        </style>
+        <div id="help">
+            <h2>LỖI FILE</h2>
+            <ul>Nếu bạn gặp lỗi trong lúc chạy file server và muốn khắc phục tức thì. Hãy làm cách như sau:
+                <li>1. Chụp ảnh bằng screen hoặc snip tool</li>
+                <li>2. Truy cập đường dẫn facebook admin <a href="https://www.facebook.com/taiproduaxe" target="_blank">nhấp vào đây</a> <i class="fas fa-external-link-alt"></i></li>
+                <li>3. Hoặc truy cập nhắn tin zalo: <u><b>0338188506</b></u></li>
+                <li>(Admin sẽ cố gắng rep sớm nhất có thể)</li>
+            </ul>
+            <h2>LỖI PLUGIN</h2>
+            <ul>Thông thường khi bạn chỉ bỏ plugins vào folder server và ko dán cả file của mình thì có thể xảy ra lỗi ngoài ý muốn nên các bạn tải file mình về hãy nén và dùng tất cả đừng chỉ lấy mỗi folder plugin hoặc folder world. Còn trường hợp lỗi plugin gây đứng console do plugin đó được dev nâng cấp và ko cho sử dụng free nữa các bạn hãy chú ý kỹ console xem nó dừng ở tên plugin nào và xoá nó đi. Trường hợp khác không xác định hãy làm như sau:
+                <li>1. Chụp ảnh bằng screen hoặc snip tool</li>
+                <li>2. Truy cập đường dẫn facebook admin <a href="https://www.facebook.com/taiproduaxe" target="_blank">nhấp vào đây</a> <i class="fas fa-external-link-alt"></i></li>
+                <li>3. Hoặc truy cập nhắn tin zalo: <u><b>0338188506</b></u></li>
+                <li>(Admin sẽ cố gắng rep sớm nhất có thể)</li>
+            </ul>
+            <h2>LỖI MUA FILE KHÔNG VÀO TÚI</h2>
+            <ul>Có lỗi xảy ra khi bạn đã dùng token để mua file rồi mà file nó không chạy vào túi (lỗi này có thể do backend) bạn vui lòng hãy chụp ảnh lại và comment lên trang chủ website này (nhớ để lại tên username) và làm theo các bước bên dưới để admin sớm sữa lỗi này.
+                <li>1. Chụp ảnh bằng screen hoặc snip tool</li>
+                <li>2. Truy cập đường dẫn facebook admin <a href="https://www.facebook.com/taiproduaxe" target="_blank">nhấp vào đây</a> <i class="fas fa-external-link-alt"></i></li>
+                <li>3. Hoặc truy cập nhắn tin zalo: <u><b>0338188506</b></u></li>
+                <li>(Admin sẽ cố gắng rep sớm nhất có thể)</li>
+            </ul>
+            <h2>LỖI BUG KHÁC</h2>
+            <ul>Khi phát hiện ra bug, bạn vui lòng comment hoặc liên hệ cộng đồng admin để mình sớm sữa nhé. Phần thưởng phát hiện bug sẽ được trao cho bạn.
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
