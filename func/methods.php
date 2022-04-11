@@ -29,4 +29,22 @@
         }
         return $downloads;
     }
+    function getUnidScript(){
+        $unidScript = "<script>
+        jQuery(document).ready(function(){
+			alert('Đã xảy ra lỗi vô cùng bí ẩn.');
+		});
+        </script>";
+        return $unidScript;
+    }
+    function getCountMuster($un, $dbOFF){
+        $sql = "select countmuster from playermusters where username = '$un'";
+        $result = mysqli_query($dbOFF, $sql);
+        $countmuster = 0;
+        if(mysqli_num_rows($result) > 0){
+            $row = $result -> fetch_array(MYSQLI_NUM);
+            $countmuster = $row[0];
+        }
+        return $countmuster;
+    }
 ?>

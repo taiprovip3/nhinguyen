@@ -32,6 +32,12 @@
             .container-fluid{
                 background-image: url("./img/bg.png");
             }
+        </style>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <!-- nav -->
+            <style>
             #menu{
                 display: flex;
                 list-style: none;
@@ -74,11 +80,7 @@
             #menu > li:hover > #sub-menu > li{
                 display: block;
             }
-        </style>
-    </head>
-    <body>
-        <div class="container-fluid">
-            <!-- nav -->
+            </style>
             <div class="row" id="nav">
                 <ul id="menu">
                     <li>
@@ -92,8 +94,8 @@
                     <li>
                         <a href="javascript:void(0)">Phúc lợi</a>
                         <ul id="sub-menu">
-                            <li><a href="javascript:void(0)">Điểm danh</a></li>
-                            <li><a href="javascript:void(0)">Nhập giftcode</a></li>
+                            <li><a href="./file/muster.php">Điểm danh</a></li>
+                            <li><a href="./file/giftcode.php">Nhập giftcode</a></li>
                         </ul>
                     </li>
                     <li>
@@ -150,7 +152,7 @@
                     <br>
                     <?php
                     if(isset($_SESSION['username']))
-                        echo "<p id='logged'>(đã đăng nhập)</p>
+                        echo "<p id='logged'>(trang cá nhân)</p>
                             <form action='./ctrl/letLogout.php' method='post'>
                                 <input type='text' name='dirname' value='../index.php'>
                                 <button class='btn btn-warning btn-xs' name='logout'>đăng xuất</button>
@@ -387,6 +389,10 @@
     </div>
     <script>
     $(document).ready(function(){
+
+        $("#logged").click(function(){
+            window.location.href = "./file/panel.php";
+        });
 
         //bình luận rỗng
         $("#comment").mousemove(function(){
