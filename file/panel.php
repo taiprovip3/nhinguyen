@@ -5,7 +5,7 @@
         exit();
     }
     include_once '../conn/dbOFF.php';
-
+    include '../func/methods.php';
 ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -29,7 +29,7 @@
                 text-decoration: underline;
                 text-shadow: 2px 2px 2px #1C0D1F;
             }
-            textarea, button{
+            textarea, button, input{
                 outline: none;
                 border: none;
             }
@@ -179,11 +179,88 @@
                     display: none;
                 }
                 .item{
-                    border: 2px solid red;
+                    /* border: 2px solid red; */
+                }
+                #profile input, #profile input:read-only, #profile select:disabled{
+                    background: white;
+                }
+                #profile i{
+                    color: #4295f5;
+                }
+                #profile button{
+                    font-weight: 900;
+                    padding: 7px;
+                    width: 16%;
+                }
+                #edLabel:hover, #edSelect:hover{
+                    cursor: pointer;
+                    text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18;
                 }
             </style>
-            <div id="profile" class="item">
-                A
+            <div id="profile" class="item alert alert-info">
+                <form method="post">
+                <div class="form-group">
+                    <label>Thành viên thứ:</label>
+                    <input type="text" class="form-control" name="inpStt" id="inpStt" value="<?php
+                        $serials = getSerial($_SESSION['username'], $dbOFF);
+                        echo $serials[0];
+                    ?>" readonly>
+                </div>
+                <div class="form-group">
+                    <label>Mã người dùng:</label>
+                    <input type="text" class="form-control" name="inpId" id="inpId" value="<?php
+                    if($serials[1] == '')
+                        echo '(chưa vào game -> chưa xác định)';
+                    else 
+                        echo $serials[1]; ?>" readonly>
+                </div>
+                <div class="form-group">
+                    <label id="edLabel">Email: <i class="far fa-edit"></i></label>
+                    <input type="text" class="form-control" name="inpEmail" id="inpEmail" value="<?php
+                        echo $serials[2]; ?>" readonly>
+                </div>
+                <div class="form-group">
+                    <label id="edLabel">SĐT: <i class="far fa-edit"></i></label>
+                    <input type="text" class="form-control" name="inpPhone" id="inpPhone" value="<?php
+                        echo $serials[3]; ?>" readonly>
+                </div>
+                <hr>
+                <div class="form-group">
+                    <label id="edLabel">Họ và tên: <i class="far fa-edit"></i></label>
+                    <input type="text" class="form-control" name="inpName" id="inpName" value="<?php
+                        echo $serials[4]; ?>" readonly>
+                </div>
+                <div class="form-group">
+                    <label id="edLabel">Tuổi: <i class="far fa-edit"></i></label>
+                    <input type="text" class="form-control" name="inpAge" id="inpAge" value="<?php
+                        echo $serials[5]; ?>" readonly>
+                </div>
+                <div class="form-group">
+                    <label id="edSelect" for="selSex">Giới tính: <i class="far fa-edit"></i></label>
+                    <select class="form-control" id="selSex" name="selSex">
+                        <?php
+                            if($serials[6] == '' || $serials[6] == 'Nam'){
+                                echo '
+                                <option value="Nam" selected="selected">Nam</option>
+                                <option value="Nữ">Nữ</option>
+                                ';
+                            } else{
+                                echo '
+                                <option value="Nam">Nam</option>
+                                <option value="Nữ" selected="selected">Nữ</option>
+                                ';
+                            }
+                        ?>
+                    </select>
+                </div>
+                <hr>
+                <div class="form-group">
+                    <label id="edLabel">Mật khẩu hiện tại: <i class="far fa-edit"></i></label>
+                    <input type="text" class="form-control" name="inputPassword" id="inpPassword" value="********" readonly>
+                </div>
+                <button class="btn btn-info" name="update">Cập nhật</button>
+                <?php include '../ctrl/updateProfile.php'; ?>
+                </form>
             </div>
             <div id="inventory" class="item">
                 B
@@ -229,6 +306,19 @@
     </div>
     <script>
     $(document).ready(function(){
+        //profile nút edit
+        $("label#edLabel").click(function(){
+            var x = $(this).parent().find("input");
+            x.removeAttr("readonly");
+            x.focus();
+            $(this).find("i").text(" (editing)");
+        });
+        $("label#edSelect").click(function(){
+            var x = $(this).parent().find("select");
+            x.removeAttr("disabled");
+            $(this).find("i").text(" (editing)");
+        });
+        //click từng item
         $("#pro").click(function(){
             $(this).css("box-shadow", "rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px");
             $("#inv").css("box-shadow", "unset");

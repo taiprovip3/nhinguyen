@@ -47,4 +47,36 @@
         }
         return $countmuster;
     }
+    function getSerial($un, $dbOFF){
+        $serials = array();
+
+        $sql = "select id,uuid from authme where username = '$un';";
+        $sql .= "select email,sdt,name,age,sex from playerprofiles where username = '$un'";
+        
+        $dbOFF -> multi_query($sql);
+        $result = $dbOFF -> store_result();
+        if(mysqli_num_rows($result) > 0){
+            $row = $result -> fetch_row();
+            $serials[0] = $row[0];
+            $serials[1] = $row[1];
+        }
+        $result -> free_result();
+        $dbOFF -> next_result();
+        $result = $dbOFF -> store_result();
+        if(mysqli_num_rows($result) > 0){
+            $row = $result -> fetch_row();
+            $serials[2] = $row[0];//email
+            $serials[3] = $row[1];//sdt
+            $serials[4] = $row[2];//name
+            $serials[5] = $row[3];//age
+            $serials[6] = $row[4];//sex
+        } else{
+            $serials[2] = "";//email
+            $serials[3] = "";//sdt
+            $serials[4] = "";//name
+            $serials[5] = "";//age
+            $serials[6] = "";//sex
+        }
+        return $serials;
+    }
 ?>
