@@ -390,6 +390,7 @@
     <script>
     $(document).ready(function(){
 
+        //Nhap icon trang ca nhan
         $("#logged").click(function(){
             window.location.href = "./file/panel.php";
         });

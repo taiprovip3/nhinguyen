@@ -42,6 +42,7 @@
                 width: 100%;
             }
             #menu > li{
+                position: relative;
                 padding: 2px;
                 font-size: larger;
                 font-weight: 800;
@@ -57,9 +58,9 @@
             }
 
             #sub-menu{
-                list-style: none;
                 position: absolute;
-                width: 19.1%;
+                list-style: none;
+                width: 100%;
             }
             #sub-menu a{
                 text-decoration: none;
@@ -90,15 +91,15 @@
                 <li>
                     <a href="javascript:void(0)">Phúc lợi</a>
                     <ul id="sub-menu">
-                        <li><a href="javascript:void(0)">Điểm danh</a></li>
-                        <li><a href="javascript:void(0)">Nhập giftcode</a></li>
+                        <li><a href="./muster.php">Điểm danh</a></li>
+                        <li><a href="./giftcode.php">Nhập giftcode</a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="javascript:void(0)">Cửa hàng</a>
                     <ul id="sub-menu">
                         <li><a href="./shopfile.php">Shop file</a></li>
-                        <li><a href="javascript:void(0)">Shop plugin</a></li>
+                        <li><a href="./shopplugin.php">Shop plugin</a></li>
                     </ul>
                 </li>
                 <li>
@@ -137,8 +138,9 @@
                 #label{
                     background: #0a7d3a;
                     font-weight: 900;
-                    font-size: larger;
+                    font-size: xx-large;
                     color: whitesmoke;
+                    padding: 10px;
                 }
                 #formcont input{
                     padding: 10px;
@@ -168,7 +170,7 @@
                         <span class="badge badge-danger" id="wrongsomethings">Tên đăng nhập hoặc mật khẩu không chính xác.</span>
                         <input type="text" name="username" id="username" placeholder="Vui lòng nhập tên đăng nhập vào đây" required><br>
                         <input type="password" name="password" id="password" placeholder="Vui lòng nhập mật khẩu vào đây" required><br>
-                        <button type="submit" name="submit">Đăng nhập</button>
+                        <button type="submit" name="submit">Đăng nhập</button>&emsp;<a href="./register.php" role="button" class="btn btn-link btn-sm">Chưa có tài khoản?</a>
                         <?php include '../ctrl/letLogin.php'; ?>
                     </form>
                 </div>

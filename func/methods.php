@@ -1,4 +1,20 @@
 <?php
+    function redirect($filename){
+        if (!headers_sent())
+            header('Location: '.$filename);
+        else {
+            echo '<script type="text/javascript">';
+            echo 'window.location.href = \''.$filename.'\';';
+            echo '</script>';
+            echo '<noscript>';
+            echo '<meta http-equiv="refresh" content="0;url=\''.$filename.'\'" />';
+            echo '</noscript>';
+        }
+        exit();
+    }
+    function hashPassword($salt, $pw){
+        return '$SHA$' . $salt . '$' . hash('sha256', hash('sha256', $pw) . $salt);//mã hóa pw nhập
+    }
     function getToken($un, $dbOFF){
         $sql = "select token from playercoins where username = '$un'";
         $result = mysqli_query($dbOFF, $sql);

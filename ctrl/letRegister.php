@@ -33,8 +33,9 @@
         } else{//TH ko co user trong table
             $salt = substr(md5(uniqid(rand(), TRUE)), 0, 16);
             $pwhassed = '$SHA$' . $salt . '$' . hash('sha256', hash('sha256', $pw) . $salt);
-            $sql = "INSERT INTO `salt` VALUES ('$un', '$salt');";
-            $sql .= "INSERT INTO authme (username, realname, `password`, ip, lastlogin, x, y, z, world, regdate, regip, yaw, pitch, email, isLogged, hasSession) VALUES ('$un','$un','$pwhassed',NULL,NULL,0,0,0,'world',0,NULL,NULL,NULL,'$em',0,0)";
+            
+            $sql = "INSERT INTO authme (username, realname, `password`, ip, lastlogin, x, y, z, world, regdate, regip, yaw, pitch, email, isLogged, hasSession) VALUES ('$un','$un','$pwhassed',NULL,NULL,0,0,0,'world',0,NULL,NULL,NULL,'$em',0,0);";
+            $sql .= "INSERT INTO `salt` VALUES ('$un', '$salt')";
             if(mysqli_multi_query($dbON, $sql) && mysqli_multi_query($dbOFF, $sql)){ //TH: query insert thanh cong
                 echo '
                 <script>

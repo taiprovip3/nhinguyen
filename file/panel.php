@@ -174,16 +174,38 @@
             </div>
             <br>
             <!-- hiden content -->
+            <hr class="accessory">
             <style>
-                #inventory, #mailbox{
+                #profile, #inventory, #curr, #mailbox, #newPassword{
                     display: none;
                 }
-                .item{
-                    /* border: 2px solid red; */
+                .accessory {
+                    height: 6px;
+                    background-image: radial-gradient(
+                        closest-side,
+                        hsla(0, 0%, 50%, 1.0),
+                        hsla(0, 0%, 50%, 0) 100%);
+                    position: relative;
+                }
+                .accessory:after {
+                    position: absolute;
+                    top:  50%;
+                    left: 50%;
+                    display:block;
+                    background-color: hsl(0, 0%, 75%);
+                    height: 12px;
+                    width:  12px;
+                    transform: rotate(45deg);
+                    margin-top:  -10px;
+                    margin-left: -10px;
+                    border-radius: 4px 0;
+                    border: 4px solid hsla(0, 0%, 100%, 0.35);
+                    background-clip: padding-box;
+                    box-shadow: -10px 10px 0 hsla(0, 0%, 100%, 0.15), 10px -10px 0 hsla(0, 0%, 100%, 0.15);
                 }
                 #profile input, #profile input:read-only, #profile select:disabled{
                     background: white;
-                }
+                }   
                 #profile i{
                     color: #4295f5;
                 }
@@ -236,7 +258,7 @@
                         echo $serials[5]; ?>" readonly>
                 </div>
                 <div class="form-group">
-                    <label id="edSelect" for="selSex">Giới tính: <i class="far fa-edit"></i></label>
+                    <label for="selSex">Giới tính: <i class="far fa-edit"></i></label>
                     <select class="form-control" id="selSex" name="selSex">
                         <?php
                             if($serials[6] == '' || $serials[6] == 'Nam'){
@@ -256,36 +278,137 @@
                 <hr>
                 <div class="form-group">
                     <label id="edLabel">Mật khẩu hiện tại: <i class="far fa-edit"></i></label>
-                    <input type="text" class="form-control" name="inputPassword" id="inpPassword" value="********" readonly>
+                    <input type="password" class="form-control" name="inpPassword" id="inpPassword" value="*******" readonly>
                 </div>
-                <button class="btn btn-info" name="update">Cập nhật</button>
+                <div class="form-group" id="newPassword">
+                    <label id="edLabel">Mật khẩu mới: <i class="far fa-edit"></i></label>
+                    <input type="password" class="form-control" name="inpNewPassword" id="inpNewPassword">
+                </div>
+                <button type="submit" class="btn btn-info" name="update">Cập nhật</button>
                 <?php include '../ctrl/updateProfile.php'; ?>
                 </form>
             </div>
+            <style>
+                #inventory{
+                    flex-wrap: wrap;
+                    border-top-left-radius: 30px;
+                    border-top-right-radius: 30px;
+                }
+                #inventory div{
+                    text-align: center;
+                    width: 30%;
+                    padding: 10px;
+                    margin: 0 auto;
+                }
+                #inventory div a{
+                    color: black;
+                    font-weight: 900;
+                }
+                #inventory div:hover{
+                    opacity: 0.8;
+                    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+                }
+            </style>
             <div id="inventory" class="item">
-                B
+                <?php include '../ctrl/loadFile.php'; ?>
             </div>
             <div id="mailbox" class="item">
-                C
+            <table class="table">
+                <thead class="thead-dark">
+                <tr>
+                    <th>Từ</th>
+                    <th>Tới</th>
+                    <th>Chủ đề</th>
+                    <th>Nội dung</th>
+                    <th>Hành động</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php include '../ctrl/loadMail.php'; ?>
+                </tbody>
+            </table>
+            </div>
+            <!-- currency fizz -->
+            <style>
+                #curr{
+                    position: fixed;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    background: #eeeee4;
+                }
+                #curr div{
+                    width: 33.3%;
+                    margin: auto;
+                    padding-top: 20px;
+                    text-align: center;
+                    font-weight: 900;
+                    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+                }
+                #curr div a{
+                    font-weight: 900;
+                    color: black;
+                }
+            </style>
+            <div id="curr">
+                <div>
+                    <img class="rounded-circle" src="../img/token.png" alt="file" width="10%">
+                    <br>
+                    <p><?php echo getToken($_SESSION['username'], $dbOFF); ?> token</p>
+                </div>
+                <div>
+                    <img class="rounded-circle" src="../img/coin.png" alt="file" width="10%">
+                    <br>
+                    <p><?php echo getCoin($_SESSION['username'], $dbOFF); ?> coin</p>
+                </div>
+                <div>
+                    <img class="img-thumbnail" src="../img/readme.png" alt="file" width="10%">
+                    <br>
+                    <a class="btn btn-link" role="button" data-toggle="modal" data-target="#readme-content">readme.txt</a>
+                </div>
             </div>
         </div><!--end container-->
     </body>
     <!-- modals -->
     <style>
-        #rateBox .far, #rateBox .fas{
-            cursor: pointer;
-            color: #fada0c;
-        }
-        #rated{
-            display: none;
+        .modal-body textarea{
+            width: 100%;
+            height: 10vh;
         }
         .modal-footer button{
-            width: 48.5%;
+            width: 46.5%;
         }
+        .modal .modal-content {
+            padding: 20px 20px 20px 20px;
+            -webkit-animation-name: modal-animation;
+            -webkit-animation-duration: 0.5s;
+            animation-name: modal-animation;
+            animation-duration: 0.5s;
+        }
+        @-webkit-keyframes modal-animation {
+        from {
+            top: -100px;
+            opacity: 0;
+        }
+        to {
+            top: 0px;
+            opacity: 1;
+        }
+    }       
+    @keyframes modal-animation {
+        from {
+            top: -100px;
+            opacity: 0;
+        }
+        to {
+            top: 0px;
+            opacity: 1;
+        }
+    }
     </style>
-    <!-- No Login Yet -->
-    <div class="modal" id="nolog">
-        <div class="modal-dialog">
+    <!-- Readme content .txt-->
+    <div class="modal" id="readme-content">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
                     <!-- Modal Header -->
                     <div class="modal-header">
@@ -293,30 +416,115 @@
                     </div>
                     <!-- Modal body -->
                     <div class="modal-body">
-                        <div class="alert alert-danger">
-                            <strong>Bạn chưa đăng nhập!</strong> cần biết bạn là ai mới có thể bình luận, vào trang login <a href="./file/login.php" class="alert-link">TẠI ĐÂY <i class="fas fa-external-link-alt"></i></a>
+                        <div class="alert alert-primary">
+                            <strong>1. </strong> Bạn đang ở màn hình túi đồ cá nhân<br>
+                            <strong>2. </strong> Để tải file từ túi đồ bạn chỉ cần click download vào link và xác nhận "I'm not robot"<br>
+                            <strong>3. </strong> Nếu bạn chỉ thấy mỗi file readme.txt. Nghĩa là bạn chưa có tài nguyên nào trong túi cả<br>
+                            <strong>4. </strong> Vật phẩm mua từ shop nhinguyen.rf.gd sẽ được lưu trữ tại đây
                         </div>
                     </div>
                     <!-- Modal footer -->
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Đã hiểu</button>
                     </div>
+            </div>
+        </div>
+    </div>
+    <!-- confirm deleteMail -->
+    <div class="modal" id="delete-mail">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                    <form method="post">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="alert alert-info">
+                            <input type="hidden" name="mailid" id="mailid">
+                            <strong>Xác nhận.</strong> Bạn có chắc chắn muốn xoá mail này chứ ?
+                        </div>
+                    </div>
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-info" name="deletemail">Xoá luôn</button>
+                        <button type="button" class="btn btn-light" data-dismiss="modal">Suy nghĩ lại</button>
+                    </div>
+                    <?php include '../ctrl/deleteMail.php'; ?>
+                    </form>
+            </div>
+        </div>
+    </div>
+    <!-- reply Mail -->
+    <div class="modal" id="reply-mail">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                    <form method="post">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <div class="form-group">
+                            <label for="fromwho">Từ:</label>
+                            <input type="text" class="form-control" id="fromwho" name="fromwho" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="fromwho">Tới:</label>
+                            <input type="text" class="form-control" id="towho" name="towho" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="fromwho">Chủ đề:</label>
+                            <input type="text" class="form-control" id="title" name="title" readonly>
+                        </div>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="alert alert-info">
+                            <strong>Nội dung:</strong><br>
+                            <textarea name="content" id="content" required></textarea>
+                        </div>
+                    </div>
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-info" name="replymail">Phản hồi</button>
+                        <button type="button" class="btn btn-light" data-dismiss="modal">Huỷ bỏ</button>
+                    </div>
+                    <?php include '../ctrl/replyMail.php'; ?>
+                    </form>
             </div>
         </div>
     </div>
     <script>
     $(document).ready(function(){
+        //click nut reply mail
+        $("button#replymail").click(function(){
+            var tdFrom = $(this).parent().parent().find("#tdFrom").text();
+            var tdTo = $(this).parent().parent().find("#tdTo").text();
+            var tdTitle = $(this).parent().parent().find("#tdTitle").text();
+            $("#fromwho").val(tdTo);
+            $("#towho").val(tdFrom);
+            $("#title").val(tdTitle);
+            $("#reply-mail").modal("toggle");
+        });
+        //click nút xoá mail trên thanh hành động
+        $("button#deletemail").click(function(){
+            var idmail = $(this).parent().parent().find("input#idmail").val();
+            $("#mailid").val(idmail);
+            $("#delete-mail").modal("toggle");
+        });
+
         //profile nút edit
         $("label#edLabel").click(function(){
             var x = $(this).parent().find("input");
             x.removeAttr("readonly");
+            x.val("");
             x.focus();
             $(this).find("i").text(" (editing)");
-        });
-        $("label#edSelect").click(function(){
-            var x = $(this).parent().find("select");
-            x.removeAttr("disabled");
-            $(this).find("i").text(" (editing)");
+
+            var y = $(this).text();
+            if(y === "Mật khẩu hiện tại:  (editing)"){
+                $("#newPassword").show();
+            }
         });
         //click từng item
         $("#pro").click(function(){
@@ -325,13 +533,15 @@
             $("#mbox").css("box-shadow", "unset");
             $("#profile").show();
             $("#inventory").hide();
+            $("#curr").hide();
             $("#mailbox").hide();
         });
         $("#inv").click(function(){
             $(this).css("box-shadow", "rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px");
             $("#pro").css("box-shadow", "unset");
             $("#mbox").css("box-shadow", "unset");
-            $("#inventory").show();
+            $("#inventory").css("display", "flex");
+            $("#curr").css("display", "flex");
             $("#profile").hide();
             $("#mailbox").hide();
         });
@@ -342,6 +552,22 @@
             $("#mailbox").show();
             $("#profile").hide();
             $("#inventory").hide();
+            $("#curr").hide();
+        });
+
+        //resize modal
+        function alignModal(){
+        var modalDialog = $(this).find(".modal-dialog");
+        
+        // Applying the top margin on modal to align it vertically center
+        modalDialog.css("margin-top", Math.max(0, ($(window).height() - modalDialog.height()) / 2));
+        }
+        // Align modal when it is displayed
+        $(".modal").on("shown.bs.modal", alignModal);
+        
+        // Align modal when user resize the window
+        $(window).on("resize", function(){
+            $(".modal:visible").each(alignModal);
         });
     });
     </script>

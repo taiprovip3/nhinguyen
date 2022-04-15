@@ -92,29 +92,29 @@
                     <li>
                         <a href="javascript:void(0)">Phúc lợi</a>
                         <ul id="sub-menu">
-                            <li><a href="./file/muster.php">Điểm danh</a></li>
+                            <li><a href="./muster.php">Điểm danh</a></li>
                             <li><a href="javascript:void(0)">Nhập giftcode</a> <i class="fas fa-street-view" style="color: greenyellow;"></i></li>
                         </ul>
                     </li>
                     <li>
                         <a href="javascript:void(0)">Cửa hàng</a>
                         <ul id="sub-menu">
-                            <li><a href="./file/shopfile.php">Shop file</a></li>
-                            <li><a href="./file/shopplugin.php">Shop plugin</a></li>
+                            <li><a href="./shopfile.php">Shop file</a></li>
+                            <li><a href="./shopplugin.php">Shop plugin</a></li>
                         </ul>
                     </li>
                     <li>
                         <a href="javascript:void(0)">Tài khoản</a>
                         <ul id="sub-menu">
-                            <li><a href="./file/register.php">Đăng ký</a></li>
-                            <li><a href="./file/login.php">Đăng nhập</a></li>
+                            <li><a href="./register.php">Đăng ký</a></li>
+                            <li><a href="./login.php">Đăng nhập</a></li>
                         </ul>
                     </li>
                     <li>
                         <a href="javascript:void(0)">Danh mục khác</a>
                         <ul id="sub-menu">
-                            <li><a href="./file/download.html">Tải xuống</a></li>
-                            <li><a href="./file/help.html">Trợ giúp</a></li>
+                            <li><a href="./download.html">Tải xuống</a></li>
+                            <li><a href="./help.html">Trợ giúp</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -150,7 +150,7 @@
                     <br>
                     <?php
                     if(isset($_SESSION['username']))
-                        echo "<p id='logged'>(đã đăng nhập)</p>
+                        echo "<p id='logged'>(trang cá nhân)</p>
                             <form action='./ctrl/letLogout.php' method='post'>
                                 <input type='text' name='dirname' value='../index.php'>
                                 <button class='btn btn-warning btn-xs' name='logout'>đăng xuất</button>
@@ -265,32 +265,28 @@
             display: none;
         }
         .modal-footer button{
-            width: 48.5%;
+            width: 50%;
         }
     </style>
-    <!-- codeBox -->
+    <!-- gotcode -->
     <form method="post">
-        <div class="modal fade" tabindex="-1" role="dialog" id="giftBox">
+        <div class="modal fade" tabindex="-1" role="dialog" id="gotcode">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Hãy bình chọn cho chất lượng của website để chúng tôi sớm cải thiện!</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body text-center">
-                    <i class="far fa-star fa-3x" id="star1"></i>
-                    <i class="far fa-star fa-3x" id="star2"></i>
-                    <i class="far fa-star fa-3x" id="star3"></i>
-                    <i class="far fa-star fa-3x" id="star4"></i>
-                    <i class="far fa-star fa-3x" id="star5"></i>
-                    <input type="text" name="rated" id="rated">
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-info" name="getRate">Đánh giá</button>
-                    <button type="button" class="btn btn-light" data-dismiss="modal">Đóng</button>
-                </div>
+                    <div class="modal-header">
+                        <h5 class="modal-title">Chúc mừng bạn đã nhận được code sự kiện.</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <div class="alert alert-primary">
+                            <strong>Mailbox!</strong> Mã code đã gửi qua hộp thư cá nhân. <a href="./panel.php" class="alert-link">NHẤP KIỂM TRA</a>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-info" data-dismiss="modal">Đã hiểu</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -306,7 +302,7 @@
                     <!-- Modal body -->
                     <div class="modal-body">
                         <div class="alert alert-danger">
-                            <strong>Bạn chưa đăng nhập!</strong> cần biết bạn là ai mới có thể bình luận, vào trang login <a href="./file/login.php" class="alert-link">TẠI ĐÂY <i class="fas fa-external-link-alt"></i></a>
+                            <strong>Bạn chưa đăng nhập!</strong> cần biết bạn là ai mới có thể bình luận, vào trang login <a href="./login.php" class="alert-link">TẠI ĐÂY <i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
                     <!-- Modal footer -->
@@ -316,6 +312,53 @@
             </div>
         </div>
     </div>
+    <!-- checkcode-result -->
+    <div class="modal" id="checkcode-result">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="alert alert-primary">
+                            <strong>Sự kiện:</strong><input type="text" name="eventName" id="eventName">
+                            <strong>Mã code:</strong><span id="codeCheck"></span>
+                        </div>
+                    </div>
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-dismiss="modal">Đóng</button>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function(){
+
+            //Nhap icon trang ca nhan
+            $("#logged").click(function(){
+                window.location.href = "./panel.php";
+            });
+            
+            //resize modal
+            function alignModal(){
+            var modalDialog = $(this).find(".modal-dialog");
+            
+            // Applying the top margin on modal to align it vertically center
+            modalDialog.css("margin-top", Math.max(0, ($(window).height() - modalDialog.height()) / 2));
+            }
+            // Align modal when it is displayed
+            $(".modal").on("shown.bs.modal", alignModal);
+            
+            // Align modal when user resize the window
+            $(window).on("resize", function(){
+                $(".modal:visible").each(alignModal);
+            });
+
+        });
+    </script>
     </html>
 <?php
     $dbOFF -> close();

@@ -42,6 +42,7 @@
                 width: 100%;
             }
             #menu > li{
+                position: relative;
                 padding: 2px;
                 font-size: larger;
                 font-weight: 800;
@@ -57,9 +58,9 @@
             }
 
             #sub-menu{
-                list-style: none;
                 position: absolute;
-                width: 19.1%;
+                list-style: none;
+                width: 100%;
             }
             #sub-menu a{
                 text-decoration: none;
@@ -90,15 +91,15 @@
                 <li>
                     <a href="javascript:void(0)">Phúc lợi</a>
                     <ul id="sub-menu">
-                        <li><a href="javascript:void(0)">Điểm danh</a></li>
-                        <li><a href="javascript:void(0)">Nhập giftcode</a></li>
+                        <li><a href="./muster.php">Điểm danh</a></li>
+                        <li><a href="./giftcode.php">Nhập giftcode</a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="javascript:void(0)">Cửa hàng</a>
                     <ul id="sub-menu">
-                        <li><a href="javascript:void(0)">Shop file</a></li>
-                        <li><a href="javascript:void(0)">Shop plugin</a></li>
+                        <li><a href="./shopfile.php">Shop file</a></li>
+                        <li><a href="./shopplugin.php">Shop plugin</a></li>
                     </ul>
                 </li>
                 <li>

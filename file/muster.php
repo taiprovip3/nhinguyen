@@ -47,21 +47,21 @@
                 width: 100%;
                 }
                 #menu > li{
+                    position: relative;
                     padding: 5px;
                     font-size: larger;
                     font-weight: 800;
                     background: #4fdb74;
                     width: 100%;
                     text-align: center;
-                    position: relative;
                 }
                 #menu a{
                     text-decoration: none;
                     color: white;
                 }
                 #sub-menu{
-                    list-style: none;
                     position: absolute;
+                    list-style: none;
                     width: 100%;
                 }
                 #sub-menu a{
@@ -93,28 +93,28 @@
                         <a href="javascript:void(0)">Phúc lợi</a>
                         <ul id="sub-menu">
                             <li><a href="javascript:void(0)">Điểm danh</a> <i class="fas fa-street-view" style="color: greenyellow;"></i></li>
-                            <li><a href="javascript:void(0)">Nhập giftcode</a></li>
+                            <li><a href="./giftcode.php">Nhập giftcode</a></li>
                         </ul>
                     </li>
                     <li>
                         <a href="javascript:void(0)">Cửa hàng</a>
                         <ul id="sub-menu">
-                            <li><a href="./file/shopfile.php">Shop file</a></li>
-                            <li><a href="./file/shopplugin.php">Shop plugin</a></li>
+                            <li><a href="./shopfile.php">Shop file</a></li>
+                            <li><a href="./shopplugin.php">Shop plugin</a></li>
                         </ul>
                     </li>
                     <li>
                         <a href="javascript:void(0)">Tài khoản</a>
                         <ul id="sub-menu">
-                            <li><a href="./file/register.php">Đăng ký</a></li>
-                            <li><a href="./file/login.php">Đăng nhập</a></li>
+                            <li><a href="./register.php">Đăng ký</a></li>
+                            <li><a href="./login.php">Đăng nhập</a></li>
                         </ul>
                     </li>
                     <li>
                         <a href="javascript:void(0)">Danh mục khác</a>
                         <ul id="sub-menu">
-                            <li><a href="./file/download.html">Tải xuống</a></li>
-                            <li><a href="./file/help.html">Trợ giúp</a></li>
+                            <li><a href="./download.html">Tải xuống</a></li>
+                            <li><a href="./help.html">Trợ giúp</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -151,7 +151,7 @@
                     <br>
                     <?php
                     if(isset($_SESSION['username']))
-                        echo "<p id='logged'>(đã đăng nhập)</p>
+                        echo "<p id='logged'>(trang cá nhân)</p>
                             <form action='../ctrl/letLogout.php' method='post'>
                                 <input type='text' name='dirname' value='../file/muster.php'>
                                 <button class='btn btn-warning btn-xs' name='logout'>đăng xuất</button>
@@ -304,7 +304,10 @@
     </div>
     <script>
     $(document).ready(function(){
-
+        //Nhap icon trang ca nhan
+        $("#logged").click(function(){
+            window.location.href = "./panel.php";
+        });
     });
     </script>
     </html>
