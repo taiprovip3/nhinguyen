@@ -8,18 +8,11 @@
     for ($i = 0; $i < $countrow; $i++)
     {
         $row = $json["$i"];//Json{1, 2} dữ liệu, gắn $row = dữ liệu của json[1] hoặc json[2], $row như 1 dòng trên T-SQL(chứa nhiều cột)
-        // echo '
-        //     <div>
-        //         <img src="../img/folder.png" alt="file" width="50%">
-        //         <p>'.$row["name"].'</p>
-        //         <a href="'.$row["content"].'">Download <i class="fa fa-cloud-download"></i></a>
-        //     </div>
-        // ';
         echo '
         <div>
             <img class="img-thumbnail" src="../img/folder.png" alt="file'.$i.'" width="50%">
             <br>
-            <a href="'.$row["link"].'n" target="_blank">'.$row["filename"].' <i class="fas fa-arrow-circle-down" style="display: block;"> Download</i></a>
+            <a href="'.$row["link"].'" target="_blank">'.$row["filename"].' <i class="fas fa-arrow-circle-down" style="display: block;"> Download</i></a>
         </div>
         ';
     }

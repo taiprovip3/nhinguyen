@@ -166,7 +166,7 @@
                 <div id="formcont">
                     <form action="" method="POST">
                         <div class="alert alert-success" id="reg-succ">
-                            <strong>Đăng ký thành công!</strong> Giờ đây bạn có thể đăng nhập <a href="./register.php" class="alert-link"><u>TẠI ĐÂY</u></a> (<span id="reg-succ-num">5</span>)
+                            <strong>Đăng ký thành công!</strong> Giờ đây bạn có thể đăng nhập <a href="./login.php" class="alert-link"><u>TẠI ĐÂY</u></a> (<span id="reg-succ-num">5</span>)
                         </div>
                         <div class="alert alert-danger" id="reg-unid">
                             <strong>Đã xảy ra lỗi ko xác định, đăng ký lại sau!</strong> (<span id="reg-unid-num">5</span>)

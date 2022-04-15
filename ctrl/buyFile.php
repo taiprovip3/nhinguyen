@@ -7,8 +7,9 @@
             $filecost = $_POST['filecost'];
 
             if(getToken($un, $dbOFF) >= $filecost){//TH: đủ tien mua
+                $linkfiles = array("https://uploading.vn/oizugjxr97sq","https://uploading.vn/robmxdmf5010","https://uploading.vn/o1cl29edhmg3","https://uploading.vn/ilvjge5qvvez","https://uploading.vn/ip9j3co0nv3z","https://uploading.vn/epv6ntbm63bv","https://uploading.vn/xanypvv194r9","https://uploading.vn/o2fdt4117nmx","https://uploading.vn/6m52nv8rtnme","https://uploading.vn/k84y0ts3rc6a","https://uploading.vn/pxbofymidcmw","https://uploading.vn/07e67i6fqe1a");
                 $sql = "update playercoins set token = token - '$filecost' where username = '$un';";
-                $sql .= "insert into playerfiles values ('','$un','$filename',CURRENT_TIMESTAMP, 'https://uploading.vn/3w3nsm3z7g5g', '$fileid');";
+                $sql .= "insert into playerfiles values ('','$un','$filename',CURRENT_TIMESTAMP, '$linkfiles[$fileid]', '$fileid');";
                 $sql .= "select * from countdownloads where fileid = '$fileid';";
                 $dbOFF -> multi_query($sql);
                 $dbOFF -> next_result();

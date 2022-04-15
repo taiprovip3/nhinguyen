@@ -7,18 +7,6 @@
     for ($i = 0; $i < $countrow; $i++)
     {
         $row = $json["$i"];
-        // echo '
-        //     <hr>
-        //     <div id="comm">
-        //         <div>
-        //             <i class="fa fa-user fa-3x"></i>
-        //         </div>
-        //         <div>
-        //             <b>'.$row["username"].' vào lúc '.$row["date"].' AM</b><br>
-        //             <i class="fa fa-pencil-square"> '.$row["content"].'</i>
-        //         </div>
-        //     </div>
-        // ';
         $day = substr($row["time"],8,2);
         $month = substr($row["time"],5,2);
         $year = substr($row["time"],0,4);
