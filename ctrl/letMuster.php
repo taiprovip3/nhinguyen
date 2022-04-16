@@ -15,13 +15,12 @@
                 if($datenow != $datemusted){//TH: hôm nay chưa điểm danh
                     $sql = "update playermusters set lastmuster = '$usernow', countmuster = countmuster + 1 where username = '$un';";
                     $sql .= "update playercoins set token = token + 1 where username = '$un'";
-
                     if($dbOFF -> multi_query($sql)) {
                         $dbOFF -> next_result();
                         echo '
                         <script>
                         jQuery(document).ready(function(){
-                            alert("Điểm danh thành công: +1 token");
+                            $("#succtran").modal("toggle");
                         });
                         </script>
                         ';
