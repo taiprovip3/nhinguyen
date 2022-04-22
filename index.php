@@ -14,7 +14,7 @@
         <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png">
         <link rel="manifest" href="./img/site.webmanifest">
-        <link rel="stylesheet" href="./css/index.css?1">
+        <link rel="stylesheet" href="./css/index.css?=1">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
@@ -106,18 +106,20 @@
                 </div>
             </div><hr>
             <!-- pulic -->
-            <div class="row" id="public">
-                <div class="col-sm-12">
-                    <h1>FANPAGE:</h1>
-                    <div id="social">
-                        <div id="yt"></div>
-                        <div id="fb"></div>
-                        <div id="zl"></div>
+            <div id="public">
+                <h1>FANPAGE:</h1><br>
+                <div id="contact">
+                    <div>
+                        <img src="./img/fb.png" alt="yt" width="100%"><br>
+                        <a href="https://www.youtube.com/channel/UCWB4agz7YPLibGMLUtydeyQ" target="_blank">Nhấp vào đây để liên kết</a> <i class="fas fa-link"></i>
                     </div>
-                    <div id="des-social" class="text-center">
-                        <div id="des-yt"><a href="https://www.youtube.com/channel/UCWB4agz7YPLibGMLUtydeyQ" target="_blank">Nhấp vào đây để liên kết</a> <i class="fas fa-link"></i></div>
-                        <div id="des-fb"><a href="https://www.facebook.com/taiproduaxe/" target="_blank">Nhấp vào đây để liên kết</a> <i class="fas fa-link"></i></div>
-                        <div id="des-zl"><a href="https://chat.zalo.me/" target="_blank">Nhấp vào đây để liên kết</a> <i class="fas fa-link"></i></div>
+                    <div>
+                        <img src="./img/fb.png" alt="fb" width="100%"><br>
+                        <a href="https://www.facebook.com/taiproduaxe/" target="_blank">Nhấp vào đây để liên kết</a> <i class="fas fa-link"></i>
+                    </div>
+                    <div>
+                        <img src="./img/fb.png" alt="zl" width="100%"><br>
+                        <a href="https://chat.zalo.me/" target="_blank">Nhấp vào đây để liên kết</a> <i class="fas fa-link"></i>
                     </div>
                 </div>
             </div>
@@ -132,7 +134,7 @@
                         <button type="button" id="fakeComment">Bình luận</button>
                         <?php include './ctrl/letComment.php'; ?>
                     </form>
-                    <br><br>
+                    <hr>
                     <div class="cmt-user" id="cmt-0">
                         <div id="cmt-user-left">
                             <img src="./img/cmt-user.png" alt="" class="rounded-circle" width="100%">

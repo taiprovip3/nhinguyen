@@ -3,7 +3,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: white;
     font-family: system-ui;
 }
 h1{
@@ -73,6 +72,7 @@ body{
     border-radius: 20px;
     width: 130px;
     margin: auto;
+    color: beige;
 }
 #user:hover{
     cursor: pointer;
@@ -101,51 +101,45 @@ body{
 }
 /* info */
 #info{
-    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+    background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 1px;
 }
 #info h3{
     font-weight: bold;
-}
-#info p{
-    color: purple;
 }
 #info a{
     text-decoration: underline;
     font-weight: 800;
 }
 /* public contact */
+#public{
+    background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
+    border-radius: 10px;
+    padding: 30px;
+    margin: 1px;
+}
 #public h3{
     font-weight: 900;
 }
-#social{
-    display: flex;
-    height: 220px;
-}
-#des-social{
+#contact{
     display: flex;
 }
-#yt,#fb,#zl,#des-yt,#des-fb,#des-zl{
-    width: 33.33%;
+#contact div{
+    width: 100%;
+    text-align: center;
 }
-#yt{
-    background-image: url("../img/yt.png");
-}
-#fb{
-    background-image: url("../img/fb.png");
-}
-#zl{
-    background-image: url("../img/zl.png");
-}
-#des-social a{
-    text-decoration: none;
-    color: aqua;
-    font-size: large;
-}
-#des-social a:hover{
-    font-weight: bold;
-    text-decoration: underline;
+#contact div a{
+    color: black;
 }
 /* comment */
+#comment{
+    background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
+    border-radius: 10px;
+    padding: 15px;
+    margin: 1px;
+}
 #comment textarea{
     width: 100%;
     padding: 10px;
