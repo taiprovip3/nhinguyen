@@ -9,78 +9,22 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link type="image/x-icon" href="./img/favicon.ico" rel="shortcut icon"/>
+        <link rel="apple-touch-icon" sizes="180x180" href="./img/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png">
+        <link rel="manifest" href="./img/site.webmanifest">
+        <link rel="stylesheet" href="./css/index.css?1">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
         <title>nhinguyen.rf.gd</title>
-        <style>
-            *{
-                margin: 0;
-                padding: 0;
-            }
-            h1{
-                font-weight: 900;
-                text-decoration: underline;
-                text-shadow: 2px 2px 2px #1C0D1F;
-            }
-            textarea, button{
-                outline: none;
-                border: none;
-            }
-            .container-fluid{
-                background-image: url("./img/bg.png");
-            }
-        </style>
     </head>
     <body>
         <div class="container-fluid">
             <!-- nav -->
-            <style>
-            #menu{
-                display: flex;
-                list-style: none;
-                width: 100%;
-            }
-            #menu > li{
-                padding: 5px;
-                font-size: larger;
-                font-weight: 800;
-                background: #4fdb74;
-                width: 100%;
-                text-align: center;
-                position: relative;
-            }
-            #menu a{
-                text-decoration: none;
-                color: white;
-            }
-            #sub-menu{
-                list-style: none;
-                position: absolute;
-                width: 100%;
-            }
-            #sub-menu a{
-                text-decoration: none;
-            }
-            #sub-menu > li{
-                background: #4fdb74;
-                display: none;
-                position: relative;
-                padding: 5px;
-            }
-            #sub-menu > li:hover{
-                cursor: pointer;
-                color: white;
-                text-decoration: underline;
-                text-shadow: 2px 2px 2px #38CE66;
-                box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-            }
-            #menu > li:hover > #sub-menu > li{
-                display: block;
-            }
-            </style>
             <div class="row" id="nav">
                 <ul id="menu">
                     <li>
@@ -122,31 +66,6 @@
                 </ul>
             </div>
             <!-- box user -->
-            <style>
-                #user{
-                    border: 1px solid grey;
-                    padding: 20px 0;
-                    font-size: 99%;
-                    text-align: center;
-                    color: black;
-                    border-radius: 20px;
-                    width: 130px;
-                    margin: auto;
-                }
-                #user:hover{
-                    cursor: pointer;
-                    opacity: 0.4;
-                    background: grey;
-                }
-                #logged{
-                    color: #202c2d;
-                    background: #FFFFFF;
-                    text-shadow: 0 1px #808d93, -1px 0 #cdd2d5, -1px 2px #808d93, -2px 1px #cdd2d5, -2px 3px #808d93, -3px 2px #cdd2d5, -3px 4px #808d93, -4px 3px #cdd2d5, -4px 5px #808d93, -5px 4px #cdd2d5, -5px 6px #808d93, -6px 5px #cdd2d5, -6px 7px #808d93, -7px 6px #cdd2d5, -7px 8px #808d93, -8px 7px #cdd2d5;
-                }
-                #user input{
-                    display: none;
-                }
-            </style>
             <div id="user">
                 <i class="fas fa-user">
                     <br>
@@ -162,50 +81,15 @@
                         echo "<p>(chưa đăng nhập)</p>";
                     ?>
                 </i>
-            </div>
-            <!-- head -->
-            <style>
-                #head{
-                    text-align: center;
-                }
-            </style>
-            <br>
-            <div id="head">
-                <img src="https://images.cooltext.com/5573532.png" width="838" height="115" alt="NHINGUYEN.RF.GD" />
-            </div>
-            <!-- description -->
-            <style>
-                #des div{
-                    text-align: center;
-                    color: white;
-                    font-weight: bold;
-                }
-                #rate{
-                    cursor: pointer;
-                    color: #FFFFFF;
-                    background: #232323;
-                    text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18;
-                }
-            </style><?php include './ctrl/loadViewer.php'; ?>
+            </div><br>
+            <!-- viewer -->
+            <?php include './ctrl/loadViewer.php'; ?>
             <div class="row" id="des">
                 <div class="col-sm-4"><u>Lượt ghé thăm</u>: <?php echo $_SESSION['views']; ?> <i class="fas fa-eye-slash" style="color: lime;"></i></div>
                 <div class="col-sm-4"><u>Số thành viên</u>: <?php echo $_SESSION['members']; ?> <i class="fas fa-users" style="color: #49ff18;"></i></div>
                 <div class="col-sm-4"><u id="rate">Được đánh giá</u>: <?php echo $_SESSION['avgstars']; ?><i class="fas fa-star" style="color: yellow;"></i></div>
-            </div>
-            <hr>
+            </div><hr>
             <!-- info -->
-            <style>
-                #info h3{
-                    font-weight: bold;
-                }
-                #info p{
-                    color: blue;
-                }
-                #info a{
-                    text-decoration: underline;
-                    font-weight: 800;
-                }
-            </style>
             <div class="row" id="info">
                 <div class="col-sm-12">
                     <h1>GIỚI THIỆU:</h1>
@@ -220,42 +104,8 @@
                     <p>&emsp;&emsp;- Đây là nơi mình lưu trữ file và các tài liệu, các bạn hãy tương tác để nhận phúc lợi (xu, cw($)...) và góp ý để mình có thể sớm khắc phục nhé lỗi (nếu có) nhé.</p>
                     <p>&emsp;&emsp;- Các bạn hãy ủng hộ mình qua donate MOMO: <b><u>0338188506</u></b>. Để mình có động lực và ít tài chính để tiếp tục chia sẽ file nha.</p>
                 </div>
-            </div>
-            <hr>
+            </div><hr>
             <!-- pulic -->
-            <style>
-                #public h3{
-                    font-weight: 900;
-                }
-                #social{
-                    display: flex;
-                    height: 220px;
-                }
-                #des-social{
-                    display: flex;
-                }
-                #yt,#fb,#zl,#des-yt,#des-fb,#des-zl{
-                    width: 33.33%;
-                }
-                #yt{
-                    background-image: url("./img/yt.png");
-                }
-                #fb{
-                    background-image: url("./img/fb.png");
-                }
-                #zl{
-                    background-image: url("./img/zl.png");
-                }
-                #des-social a{
-                    text-decoration: none;
-                    color: #001a0a;
-                    font-size: large;
-                }
-                #des-social a:hover{
-                    font-weight: bold;
-                    text-decoration: underline;
-                }
-            </style>
             <div class="row" id="public">
                 <div class="col-sm-12">
                     <h1>FANPAGE:</h1>
@@ -273,34 +123,6 @@
             </div>
             <hr>
             <!-- comment -->
-            <style>
-                #comment textarea{
-                    width: 100%;
-                    padding: 10px;
-                    border-radius: 5px;
-                }
-                .cmt-user{
-                    display: flex;
-                }
-                #cmt-user-left{
-                    width: 5%;
-                }
-                #cmt-user-right{
-                    line-height: 1.1;
-                }
-                #comment button{
-                    padding: 6px;
-                    width: 120px;
-                    border-radius: 5px;
-                }
-                #comment button:hover{
-                    background: #38CE66;
-                    font-weight: bold;
-                }
-                #letComment{
-                    display: none;
-                }
-            </style>
             <div class="row" id="comment">
                 <div class="col-sm-12">
                     <h1>BÌNH LUẬN:</h1>
@@ -323,70 +145,63 @@
                     <?php include './ctrl/loadComment.php'; ?>
                 </div>
             </div>
-        </div><!--end container-->
-    </body>
-    <!-- modals -->
-    <style>
-        #rateBox .far, #rateBox .fas{
-            cursor: pointer;
-            color: #fada0c;
-        }
-        #rated{
-            display: none;
-        }
-        .modal-footer button{
-            width: 48.5%;
-        }
-    </style>
-    <!-- rateBox -->
-    <form action="" method="post">
-        <div class="modal fade" tabindex="-1" role="dialog" id="rateBox">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Hãy bình chọn cho chất lượng của website để chúng tôi sớm cải thiện!</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
+            <!-- modal -->
+            <style>
+                .testModal{
+                    background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+                    position: fixed;
+                    transform: translate(-50%, -50%);
+                    top: 50%;
+                    left: 50%;
+                    border-radius: 10px;
+                    padding: 15px;
+                    display: none;
+                }
+                .testModal *{
+                    color: black;
+                    padding: 10px;
+                }
+                .modalClose{
+                    display: flex;
+                }
+                .modalClose button, .modalClose a{
+                    width: 100%;
+                    margin: auto;
+                    padding: 8px;
+                    text-align: center;
+                }
+                .modalClose .action{
+                    background-image: linear-gradient(to top, #0fd850 0%, #f9f047 100%);
+                }
+            </style>
+            <div class="testModal" id="nolog">
+                <div class="contentModal">
+                    <strong>Vui lòng chọn đăng nhập bên dưới để tiếp tục</strong>
                 </div>
-                <div class="modal-body text-center">
+                <div class="modalClose">
+                    <a href="./file/login.php" role="button" class="action">Đăng nhập</a>
+                    <button class="btn btn-light" id="closeModal">Đóng lại</button>
+                </div>
+            </div>
+            <form method="post">
+            <div class="testModal" id="rateBox">
+                <div class="contentModal">
                     <i class="far fa-star fa-3x" id="star1"></i>
                     <i class="far fa-star fa-3x" id="star2"></i>
                     <i class="far fa-star fa-3x" id="star3"></i>
                     <i class="far fa-star fa-3x" id="star4"></i>
                     <i class="far fa-star fa-3x" id="star5"></i>
-                    <input type="text" name="rated" id="rated">
+                    <input type="hidden" name="rated" id="rated">
                 </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-info" name="getRate">Đánh giá</button>
-                    <button type="button" class="btn btn-light" data-dismiss="modal">Đóng</button>
+                <div class="modalClose">
+                    <button type="submit" class="action" name="getRate">Đánh giá</button>
+                    <button type="button" class="btn btn-light" id="closeModal">Đóng lại</button>
                 </div>
-                </div>
+                <?php include './ctrl/letRate.php'; ?>
             </div>
-        </div>
-        <?php include './ctrl/letRate.php'; ?>
-    </form>
-    <!-- No Login Yet -->
-    <div class="modal" id="nolog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                    <!-- Modal Header -->
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-                    <!-- Modal body -->
-                    <div class="modal-body">
-                        <div class="alert alert-danger">
-                            <strong>Bạn chưa đăng nhập!</strong> cần biết bạn là ai mới có thể bình luận, vào trang login <a href="./file/login.php" class="alert-link">TẠI ĐÂY <i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                    <!-- Modal footer -->
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
-                    </div>
-            </div>
-        </div>
-    </div>
+            </form>
+        </div><!--end container-->
+    </body>
     <script>
     $(document).ready(function(){
 
@@ -406,6 +221,12 @@
                 $("#letComment").hide();
             }
         });
+
+        //closeModal
+        $("button#closeModal").click(function(){
+            $(this).parent().parent().hide();
+        });
+
         //Move ảo
         $("#scr-info").click(function(){
             $(document).scrollTop( $("#info").offset().top );
@@ -422,7 +243,7 @@
         });
         //hiện box rate 5sao
         $("#rate").click(function(){
-            $("#rateBox").modal('toggle');
+            $("#rateBox").show();
         });
         //hover 5sao đánh vàng
         $("#star1").hover(function(){

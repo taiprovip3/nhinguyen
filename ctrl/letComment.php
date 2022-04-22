@@ -8,7 +8,7 @@
         } else{
             echo '<script>
             jQuery(document).ready(function(){
-                $("#nolog").modal("toggle");
+                $("#nolog").show();
             });
             </script>';
         }
